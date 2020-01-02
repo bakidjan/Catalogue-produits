@@ -1,0 +1,53 @@
+<div class="container">
+   <div class="row">
+     <div class="col-md-3"></div>
+     <div class="col-md-6">
+       <div class="card">
+         <div class="card-header">Nouveau Produit</div>
+         <div class="card-body" *ngIf="mode==1">
+             <form #f="ngForm" (ngSubmit)="onSaveProduct(f.value)">
+               <div class="form-group">
+                 <label name="designation"> Designation</label>
+                 <input class="form-control" name="designation" type="text" ngModel>
+               </div >
+               <div class="form-group">
+                 <label name="price"> Prix</label>
+                 <input class="form-control" name="price" type="number" ngModel>
+               </div>
+               <div class="form-group">
+                 <label name="quantity"> Quantité</label>
+                 <input class="form-control" name="quantity" type="number" ngModel>
+               </div>
+               <button type="submit" class="btn btn-info btn-sm">Update</button>
+             </form>
+           </div>
+         <div class="card">
+           <div class="card-body" *ngIf="mode==2">
+             <button class="btn btn-success btn-sm">
+               <a (click)="onNewprodcut()">Nouveau Produit</a>
+             </button>
+             <p></p>
+             <div class="form-group">
+               <label>ID</label> :
+               <label>{{currentProduct.id}}</label>
+             </div>
+             <div class="form-group">
+               <label>Designation</label> :
+               <label>{{currentProduct.designation}}</label>
+             </div>
+             <div class="form-group">
+               <label>Price</label> :
+               <label>{{currentProduct.price}}</label>
+             </div>
+             <div class="form-group">
+               <label>Quantité</label> :
+               <label>{{currentProduct.quantity}}</label>
+             </div>
+           </div>
+         </div>
+         </div>
+       </div>
+     </div>
+     <div class="col-md-3"></div>
+   </div>
+
